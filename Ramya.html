@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>I Love U Ramya</title>
+  <style type="text/css">
+    body {
+  margin: 0;
+  background: #000; 
+}
+video { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+ background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
+  background-size: cover;
+  transition: 1s opacity;
+}
+.stopfade { 
+   opacity: .5;
+}
+
+#polina { 
+  font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+  font-weight:100; 
+  background: rgba(0,0,0,0.3);
+  color: white;
+  /*padding: 2rem;*/
+  width: 33%;
+  margin:2rem;
+  float: left;
+  font-size: 1.2rem;
+}
+h1 {
+	color: red;
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-top: 0;
+  letter-spacing: .3rem;
+}
+#anand {
+	color: blue;
+}
+#polina button { 
+  display: block;
+  width: 80%;
+  padding: .4rem;
+  border: none; 
+  margin: 1rem auto; 
+  font-size: 1.3rem;
+  background: rgba(255,255,255,0.23);
+  color: #fff;
+  border-radius: 3px; 
+  cursor: pointer;
+  transition: .3s background;
+}
+#polina button:hover { 
+   background: rgba(0,0,0,0.5);
+}
+
+a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  background:rgba(0,0,0,0.5);
+  padding: .5rem;
+  transition: .6s background; 
+}
+a:hover{
+  background:rgba(0,0,0,0.9);
+}
+@media screen and (max-width: 500px) { 
+  div{width:70%;} 
+}
+@media screen and (max-device-width: 800px) {
+  html { background: url(RamyaSree.jpeg) #000 no-repeat center center fixed; }
+  #bgvid { display: none; }
+}
+p {
+	font-family: 'Caveat', cursive;
+}
+  </style>
+}
+</head>
+<body>
+<video poster="RamyaSree.jpeg" id="bgvid" playsinline autoplay muted loop>
+<source src="RamyaSree.mp4" type="video/mp4">
+
+</video>
+<div id="polina">
+<h1>Ramya ❤️</h1>
+<p id="anand">filmed by Anand 💙</p>
+<p>My life is beautiful because of you my love.
+You showed me the meaning of love not with your words but with your care.
+I know your shy nature doesn’t let you open up to me;
+But your eyes speak up the love you have for me.
+Love you a lot.
+I want you to know that there's no one who can replace you. Everyday seems like a blessing since I have met you.I'm so completely in love with you. So, I just wanted to say I love you.</p>
+
+<p>In life there are certain things that words cannot describe. The feeling I have when I talk to you, when I think about you, and when I dream about you, is amazing. I've never felt like this ,before in my life. My love for you has grown so much over the past couple of months.I would have never imagined that we would be where we are today. I don't think that our love will ever fade or wither. I'll always be there for you .We are best of friends. My life is perfect with you in it. Thank you, My love for making my life so beautiful.</p>
+<button>Pause</button>
+</div>
+<script type="text/javascript">
+  var vid = document.getElementById("bgvid");
+var pauseButton = document.querySelector("#polina button");
+
+if (window.matchMedia('(prefers-reduced-motion)').matches) {
+    vid.removeAttribute("autoplay");
+    vid.pause();
+    pauseButton.innerHTML = "Paused";
+}
+
+function vidFade() {
+  vid.classList.add("stopfade");
+}
+
+vid.addEventListener('ended', function()
+{
+// only functional if "loop" is removed 
+vid.pause();
+// to capture IE10
+vidFade();
+}); 
+
+
+pauseButton.addEventListener("click", function() {
+  vid.classList.toggle("stopfade");
+  if (vid.paused) {
+    vid.play();
+    pauseButton.innerHTML = "Pause";
+  } else {
+    vid.pause();
+    pauseButton.innerHTML = "Paused";
+  }
+})
+
+
+</script>
+</body>
+</html>
